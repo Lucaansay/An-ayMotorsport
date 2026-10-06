@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+      <title>Ançay Motorsport | Preparação automotiva de alta performance</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap"
+            rel="stylesheet">
+      <style>
+            :root {
+                  --bg: #0e1013;
+                  --bg2: #161a1f;
+                  --line: #2a3038;
+                  --tx: #eceae6;
+                  --mut: #9aa2ad;
+                  --ac: #2f8bff;
+                  --hot: #ff4d2e;
+                  --on: #fff;
+                  box-sizing: border-box;
+                  padding-top: env(safe-area-inset-top, 0px);
+                  padding-bottom: env(safe-area-inset-bottom, 0px)
+            }
+
+            @media (prefers-color-scheme:light) {
+                  :root:not([data-theme="dark"]) {
+                        --bg: #f3f4f6;
+                        --bg2: #fff;
+                        --line: #d5d9df;
+                        --tx: #14171b;
+                        --mut: #5a6470
+                  }
+            }
+
+            :root[data-theme="light"] {
+                  --bg: #f3f4f6;
+                  --bg2: #fff;
+                  --line: #d5d9df;
+                  --tx: #14171b;
+                  --mut: #5a6470
+            }
+
+            :root[data-theme="dark"] {
+                  --bg: #0e1013;
+                  --bg2: #161a1f;
+                  --line: #2a3038;
+                  --tx: #eceae6;
+                  --mut: #9aa2ad
+            }
+
+            html {
+                  scroll-behavior: smooth;
+                  scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px))
+            }
+
+            *,
+            *:before,
+            *:after {
+                  box-sizing: border-box
+            }
+
+            body {
+                  margin: 0;
+                  background: var(--bg);
+                  color: var(--tx);
+                  font: 400 17px/1.6 Barlow, system-ui, sans-serif
+            }
+
+            h1,
+            h2,
+            h3,
+            .cond {
+                  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+                  font-weight: 800;
+                  line-height: 1;
+                  letter-spacing: .01em;
+                  margin: 0
+            }
+
+            a {
+                  color: inherit;
+                  text-decoration: none
+            }
+
+            :focus-visible {
+                  outline: 3px solid var(--ac);
+                  outline-offset: 3px
+            }
+
+            .wrap {
+                  max-width: 1160px;
+                  margin: auto;
+                  padding: 0 22px
+            }
+
+            section {
+                  padding: 84px 0
+            }
+
+            h2 {
+                  font-size: clamp(36px, 6vw, 60px);
+                  text-transform: uppercase;
+                  margin-bottom: 14px
+            }
+
+            .lead {
+                  color: var(--mut);
+                  max-width: 60ch;
+                  margin: 0 0 40px
+            }
+
+            .btn {
+                  display: inline-block;
+                  background: var(--ac);
+                  color: #fff;
+                  padding: 14px 26px;
+                  font: 700 18px "Barlow Condensed", sans-serif;
+                  text-transform: uppercase;
+                  letter-spacing: .06em;
+                  border: 0;
+                  cursor: pointer;
+                  clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%)
+            }
+
+            .btn.ghost {
+                  background: none;
+                  color: var(--tx);
+                  box-shadow: inset 0 0 0 2px var(--line);
+                  clip-path: none
+            }
+
+            header {
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  z-index: 20;
+                  background: color-mix(in srgb, var(--bg) 88%, transparent);
+                  backdrop-filter: blur(10px);
+                  border-bottom: 1px solid var(--line);
+                  padding-top: env(safe-area-inset-top, 0px)
+            }
+
+            .nav {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  height: 68px
+            }
+
+            .brand {
+                  display: flex;
+                  align-items: center;
+                  gap: 10px
+            }
+
+            .brand b {
+                  font: 800 26px "Barlow Condensed";
+                  letter-spacing: .04em;
+                  text-transform: uppercase;
+                  line-height: .9
+            }
+
+            .brand small {
+                  display: block;
+                  font: 600 12px Barlow;
+                  letter-spacing: .42em;
+                  color: var(--mut);
+                  text-transform: uppercase
+            }
+
+            nav ul {
+                  display: flex;
+                  gap: 26px;
+                  list-style: none;
+                  margin: 0;
+                  padding: 0;
+                  font: 600 16px "Barlow Condensed";
+                  letter-spacing: .08em;
+                  text-transform: uppercase
+            }
+
+            nav a:hover {
+                  color: var(--ac)
+            }
+
+            #mb {
+                  display: none;
+                  background: none;
+                  border: 1px solid var(--line);
+                  color: var(--tx);
+                  padding: 8px 12px;
+                  font: 600 16px Barlow
+            }
+
+            .hero {
+                  min-height: 100svh;
+                  display: flex;
+                  align-items: center;
+                  padding: 120px 0 60px;
+                  position: relative;
+                  overflow: hidden
+            }
+
+            .hero h1 {
+                  font-size: clamp(54px, 11vw, 138px);
+                  text-transform: uppercase
+            }
+
+            .hero h1 span {
+                  display: block;
+                  color: transparent;
+                  -webkit-text-stroke: 2px var(--tx)
+            }
+
+            .hero p {
+                  max-width: 50ch;
+                  color: var(--mut);
+                  font-size: 19px;
+                  margin: 22px 0 30px
+            }
+
+            .hero .cta {
+                  display: flex;
+                  gap: 14px;
+                  flex-wrap: wrap
+            }
+
+            #curve {
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  width: 100%;
+                  height: 46%;
+                  opacity: .9;
+                  pointer-events: none
+            }
+
+            .curve-p {
+                  fill: none;
+                  stroke: var(--ac);
+                  stroke-width: 3;
+                  stroke-dasharray: 2400;
+                  stroke-dashoffset: 2400;
+                  animation: dr 3.2s .3s ease-out forwards
+            }
+
+            .curve-t {
+                  fill: none;
+                  stroke: var(--hot);
+                  stroke-width: 3;
+                  stroke-dasharray: 2400;
+                  stroke-dashoffset: 2400;
+                  animation: dr 3.2s .7s ease-out forwards
+            }
+
+            @keyframes dr {
+                  to {
+                        stroke-dashoffset: 0
+                  }
+            }
+
+            .stats {
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  border-block: 1px solid var(--line);
+                  background: var(--bg2)
+            }
+
+            .stats div {
+                  padding: 30px 22px;
+                  border-right: 1px solid var(--line)
+            }
+
+            .stats div:last-child {
+                  border: 0
+            }
+
+            .stats b {
+                  font: 800 54px "Barlow Condensed";
+                  display: block;
+                  line-height: 1;
+                  color: var(--ac)
+            }
+
+            .stats span {
+                  color: var(--mut);
+                  font-size: 15px
+            }
+
+            .stages {
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  gap: 16px
+            }
+
+            .st {
+                  background: var(--bg2);
+                  border: 1px solid var(--line);
+                  padding: 28px 24px;
+                  display: flex;
+                  flex-direction: column;
+                  position: relative
+            }
+
+            .st.top {
+                  border-color: var(--ac);
+                  box-shadow: 0 0 0 1px var(--ac)
+            }
+
+            .st .tag {
+                  position: absolute;
+                  top: -13px;
+                  left: 20px;
+                  background: var(--ac);
+                  color: #fff;
+                  font: 700 13px "Barlow Condensed";
+                  letter-spacing: .1em;
+                  padding: 3px 10px;
+                  text-transform: uppercase
+            }
+
+            .st h3 {
+                  font-size: 42px;
+                  text-transform: uppercase
+            }
+
+            .gain {
+                  font: 700 24px "Barlow Condensed";
+                  color: var(--hot);
+                  margin: 6px 0 12px
+            }
+
+            .price {
+                  font: 800 40px "Barlow Condensed";
+                  margin: auto 0 16px
+            }
+
+            .price small {
+                  font: 500 14px Barlow;
+                  color: var(--mut)
+            }
+
+            .st ul {
+                  list-style: none;
+                  padding: 0;
+                  margin: 14px 0 18px;
+                  color: var(--mut);
+                  font-size: 15.5px
+            }
+
+            .st li {
+                  padding: 7px 0;
+                  border-top: 1px solid var(--line)
+            }
+
+            .st .btn {
+                  text-align: center
+            }
+
+            .calc {
+                  margin-top: 34px;
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 30px;
+                  background: var(--bg2);
+                  border: 1px solid var(--line);
+                  padding: 30px
+            }
+
+            .calc label {
+                  display: block;
+                  font: 600 15px Barlow;
+                  color: var(--mut);
+                  margin: 12px 0 5px
+            }
+
+            input,
+            select,
+            textarea {
+                  width: 100%;
+                  background: var(--bg);
+                  border: 1px solid var(--line);
+                  color: var(--tx);
+                  padding: 12px 14px;
+                  font: inherit;
+                  border-radius: 0
+            }
+
+            .res {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center
+            }
+
+            .res b {
+                  font: 800 78px "Barlow Condensed";
+                  line-height: 1;
+                  color: var(--ac)
+            }
+
+            .res small {
+                  color: var(--mut)
+            }
+
+            .srv {
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+                  gap: 0 40px
+            }
+
+            .row {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: baseline;
+                  gap: 18px;
+                  padding: 20px 0;
+                  border-bottom: 1px solid var(--line)
+            }
+
+            .row h3 {
+                  font-size: 26px;
+                  text-transform: uppercase
+            }
+
+            .row p {
+                  margin: 4px 0 0;
+                  color: var(--mut);
+                  font-size: 15px;
+                  line-height: 1.45
+            }
+
+            .row .v {
+                  font: 800 26px "Barlow Condensed";
+                  white-space: nowrap;
+                  color: var(--ac)
+            }
+
+            .dyno {
+                  display: grid;
+                  grid-template-columns: 1.25fr 1fr;
+                  gap: 40px;
+                  align-items: center
+            }
+
+            .dyno figure {
+                  margin: 0;
+                  background: var(--bg2);
+                  border: 1px solid var(--line);
+                  padding: 10px
+            }
+
+            .dyno figcaption {
+                  color: var(--mut);
+                  font-size: 14px;
+                  padding: 10px 6px 4px
+            }
+
+            .chk {
+                  list-style: none;
+                  padding: 0;
+                  margin: 0
+            }
+
+            .chk li {
+                  padding: 10px 0 10px 32px;
+                  position: relative;
+                  border-bottom: 1px solid var(--line)
+            }
+
+            .chk li:before {
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  top: 17px;
+                  width: 16px;
+                  height: 8px;
+                  border-left: 3px solid var(--ac);
+                  border-bottom: 3px solid var(--ac);
+                  transform: rotate(-45deg)
+            }
+
+            .feat {
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 16px
+            }
+
+            .feat div {
+                  background: var(--bg2);
+                  border: 1px solid var(--line);
+                  padding: 26px
+            }
+
+            .feat h3 {
+                  font-size: 28px;
+                  text-transform: uppercase;
+                  margin-bottom: 8px
+            }
+
+            .feat p {
+                  margin: 0;
+                  color: var(--mut);
+                  font-size: 15.5px
+            }
+
+            .proc {
+                  display: grid;
+                  grid-template-columns: repeat(5, 1fr);
+                  gap: 14px;
+                  counter-reset: s
+            }
+
+            .proc div {
+                  border-top: 3px solid var(--ac);
+                  padding-top: 14px;
+                  counter-increment: s
+            }
+
+            .proc div:before {
+                  content: counter(s);
+                  font: 800 40px "Barlow Condensed";
+                  color: var(--ac)
+            }
+
+            .proc h3 {
+                  font-size: 24px;
+                  text-transform: uppercase;
+                  margin: 4px 0 6px
+            }
+
+            .proc p {
+                  margin: 0;
+                  color: var(--mut);
+                  font-size: 15px;
+                  line-height: 1.45
+            }
+
+            .rev {
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 16px
+            }
+
+            .rev blockquote {
+                  margin: 0;
+                  background: var(--bg2);
+                  border-left: 4px solid var(--ac);
+                  padding: 24px
+            }
+
+            .rev cite {
+                  display: block;
+                  margin-top: 12px;
+                  font: 700 18px "Barlow Condensed";
+                  font-style: normal;
+                  text-transform: uppercase;
+                  color: var(--mut)
+            }
+
+            details {
+                  border-bottom: 1px solid var(--line);
+                  padding: 18px 0
+            }
+
+            summary {
+                  cursor: pointer;
+                  font: 700 24px "Barlow Condensed";
+                  text-transform: uppercase
+            }
+
+            details p {
+                  color: var(--mut);
+                  margin: 10px 0 0
+            }
+
+            .ct {
+                  display: grid;
+                  grid-template-columns: 1fr 1.1fr;
+                  gap: 44px
+            }
+
+            .ct form {
+                  display: grid;
+                  gap: 12px
+            }
+
+            .ct .info p {
+                  margin: 0 0 14px;
+                  color: var(--mut)
+            }
+
+            .ct .info b {
+                  color: var(--tx);
+                  display: block
+            }
+
+            footer {
+                  border-top: 1px solid var(--line);
+                  padding: 34px 0;
+                  color: var(--mut);
+                  font-size: 14.5px
+            }
+
+            footer .wrap {
+                  display: flex;
+                  justify-content: space-between;
+                  gap: 16px;
+                  flex-wrap: wrap;
+                  align-items: center
+            }
+
+            .wa {
+                  position: fixed;
+                  right: max(18px, env(safe-area-inset-right, 0px));
+                  bottom: max(18px, calc(env(safe-area-inset-bottom, 0px) + 8px));
+                  z-index: 30;
+                  background: #25d366;
+                  color: #fff;
+                  width: 58px;
+                  height: 58px;
+                  border-radius: 50%;
+                  display: grid;
+                  place-items: center;
+                  box-shadow: 0 6px 20px rgba(0, 0, 0, .35)
+            }
+
+            @media(max-width:960px) {
+                  nav ul {
+                        display: none;
+                        position: absolute;
+                        top: 68px;
+                        left: 0;
+                        right: 0;
+                        flex-direction: column;
+                        background: var(--bg);
+                        padding: 16px 22px;
+                        border-bottom: 1px solid var(--line)
+                  }
+
+                  nav ul.open {
+                        display: flex
+                  }
+
+                  #mb {
+                        display: block
+                  }
+
+                  .stages,
+                  .stats,
+                  .feat,
+                  .rev {
+                        grid-template-columns: 1fr 1fr
+                  }
+
+                  .proc {
+                        grid-template-columns: 1fr 1fr
+                  }
+
+                  .dyno,
+                  .ct,
+                  .calc,
+                  .srv {
+                        grid-template-columns: 1fr
+                  }
+
+                  .stats div:nth-child(2) {
+                        border-right: 0
+                  }
+            }
+
+            @media(max-width:600px) {
+                  section {
+                        padding: 60px 0
+                  }
+
+                  .stages,
+                  .feat,
+                  .rev,
+                  .proc {
+                        grid-template-columns: 1fr
+                  }
+
+                  .stats b {
+                        font-size: 42px
+                  }
+
+                  .res b {
+                        font-size: 60px
+                  }
+
+                  .row {
+                        flex-wrap: wrap
+                  }
+            }
+
+            @media(prefers-reduced-motion:reduce) {
+
+                  .curve-p,
+                  .curve-t {
+                        animation: none;
+                        stroke-dashoffset: 0
+                  }
+
+                  html {
+                        scroll-behavior: auto
+                  }
+            }
+      </style>
+</head>
+
+<body><svg width="0" height="0" style="position:absolute" aria-hidden="true">
+            <symbol id="logo" viewBox="0 0 64 56">
+                  <path d="M32 2 62 54H46L32 28 18 54H2Z" fill="var(--tx)" />
+                  <path d="M18 54 32 28 40 42 30 54Z" fill="var(--ac)" />
+                  <path d="M2 34h22M6 42h16" stroke="var(--hot)" stroke-width="3" />
+                  <path d="M32 54q-4 0-4 5" stroke="var(--tx)" stroke-width="3" fill="none" />
+            </symbol>
+      </svg>
+      <header>
+            <div class="wrap nav"><a class="brand" href="#topo" aria-label="Ançay Motorsport"><svg width="46"
+                              height="42">
+                              <use href="#logo" />
+                        </svg><span><b>Ançay</b><small>Motorsport</small></span></a><button id="mb"
+                        aria-label="Abrir menu">Menu</button>
+                  <nav>
+                        <ul id="menu">
+                              <li><a href="#stages">Stages</a></li>
+                              <li><a href="#servicos">Serviços</a></li>
+                              <li><a href="#dino">Dinamômetro</a></li>
+                              <li><a href="#processo">Processo</a></li>
+                              <li><a href="#contato">Contato</a></li>
+                        </ul>
+                  </nav>
+            </div>
+      </header>
+      <main id="topo">
+            <div class="hero">
+                  <div class="wrap">
+                        <h1>Potência<span>com assinatura</span></h1>
+                        <p>Preparação de alta performance para carros nacionais e importados. Reprogramação, hardware e
+                              acerto em dinamômetro, tudo medido e documentado.</p>
+                        <div class="cta"><a class="btn" href="#stages">Ver stages e valores</a><a class="btn ghost"
+                                    href="#contato">Pedir orçamento</a></div>
+                  </div><svg id="curve" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
+                        <path class="curve-p" d="M0 270C140 262 260 230 400 160S650 40 800 30 1000 70 1200 120" />
+                        <path class="curve-t" d="M0 285C150 250 260 150 380 110S560 70 760 100 1000 180 1200 230" />
+                  </svg>
+            </div>
+            <div class="stats">
+                  <div class="wrap" style="display:contents">
+                        <div><b data-n="1200" data-s="+">0</b><span>carros preparados</span></div>
+                        <div><b data-n="18" data-s=" anos">0</b><span>de experiência em pista e dino</span></div>
+                        <div><b data-n="850" data-s=" cv">0</b><span>maior potência medida na casa</span></div>
+                        <div><b data-n="12" data-s=" meses">0</b><span>de garantia na calibração</span></div>
+                  </div>
+            </div>
+            <section id="stages">
+                  <div class="wrap">
+                        <h2>Stages de preparação</h2>
+                        <p class="lead">Cada stage soma ao anterior. Os ganhos variam conforme o motor; o valor final é
+                              confirmado após leitura da ECU e teste no dinamômetro.</p>
+                        <div class="stages">
+                              <article class="st">
+                                    <h3>Stage 1</h3>
+                                    <div class="gain">+20% a 30% de potência</div>
+                                    <div class="price">R$ 2.800 <small>a partir de</small></div>
+                                    <ul>
+                                          <li>Remap de ECU/TCU exclusivo</li>
+                                          <li>Sem troca de peças</li>
+                                          <li>Curva medida no dino</li>
+                                          <li>Garantia de 12 meses</li>
+                                    </ul><a class="btn" href="#contato">Quero o Stage 1</a>
+                              </article>
+                              <article class="st top"><span class="tag">Mais vendido</span>
+                                    <h3>Stage 2</h3>
+                                    <div class="gain">+35% a 45% de potência</div>
+                                    <div class="price">R$ 5.900 <small>a partir de</small></div>
+                                    <ul>
+                                          <li>Remap otimizado ao hardware</li>
+                                          <li>Downpipe + intake esportivo</li>
+                                          <li>Intercooler maior (se necessário)</li>
+                                          <li>Acerto fino em dinamômetro</li>
+                                    </ul><a class="btn" href="#contato">Quero o Stage 2</a>
+                              </article>
+                              <article class="st">
+                                    <h3>Stage 3</h3>
+                                    <div class="gain">+60% a 90% de potência</div>
+                                    <div class="price">R$ 12.900 <small>a partir de</small></div>
+                                    <ul>
+                                          <li>Turbina maior ou híbrida</li>
+                                          <li>Injetores e bomba de combustível</li>
+                                          <li>Embreagem reforçada</li>
+                                          <li>Acerto completo em dino</li>
+                                    </ul><a class="btn" href="#contato">Quero o Stage 3</a>
+                              </article>
+                              <article class="st">
+                                    <h3>Stage 4</h3>
+                                    <div class="gain">+100% ou mais</div>
+                                    <div class="price">Sob consulta</div>
+                                    <ul>
+                                          <li>Motor forjado (bielas e pistões)</li>
+                                          <li>Turbo de grande porte</li>
+                                          <li>Transmissão e diferencial</li>
+                                          <li>Projeto para pista ou arrancada</li>
+                                    </ul><a class="btn" href="#contato">Falar com engenheiro</a>
+                              </article>
+                        </div>
+                        <div class="calc">
+                              <div>
+                                    <h3 style="font-size:34px;text-transform:uppercase">Simule seu ganho</h3><label
+                                          for="cv">Potência original (cv)</label><input id="cv" type="number"
+                                          value="200" min="60" max="900"><label for="stg">Stage</label><select id="stg">
+                                          <option value="25|2800">Stage 1</option>
+                                          <option value="40|5900">Stage 2</option>
+                                          <option value="70|12900">Stage 3</option>
+                                    </select>
+                              </div>
+                              <div class="res"><small>Potência estimada</small><b id="out">250 cv</b><small
+                                          id="out2">Ganho de +50 cv · a partir de R$ 2.800</small><small
+                                          style="margin-top:10px;font-size:13px">Estimativa para fins de referência. O
+                                          resultado real depende do motor e é medido no dinamômetro.</small></div>
+                        </div>
+                  </div>
+            </section>
+            <section id="servicos" style="background:var(--bg2)">
+                  <div class="wrap">
+                        <h2>Serviços e valores</h2>
+                        <p class="lead">Valores a partir de, em reais. Pacotes combinados têm desconto.</p>
+                        <div class="srv">
+                              <div class="row">
+                                    <div>
+                                          <h3>Remap de ECU</h3>
+                                          <p>Reprogramação de mapas de ignição, boost e injeção.</p>
+                                    </div><span class="v">R$ 2.800</span>
+                              </div>
+                              <div class="row">
+                                    <div>
+                                          <h3>Sessão de dinamômetro</h3>
+                                          <p>Curva de potência e torque com relatório impresso.</p>
+                                    </div><span class="v">R$ 450</span>
+                              </div>
+                              <div class="row">
+                                    <div>
+                                          <h3>Conversão flex / etanol</h3>
+                                          <p>Calibração para E85 com sensor de composição.</p>
+                                    </div><span class="v">R$ 3.200</span>
+                              </div>
+                              <div class="row">
+                                    <div>
+                                          <h3>Downpipe e escape esportivo</h3>
+                                          <p>Peça e instalação com remap incluso.</p>
+                                    </div><span class="v">R$ 3.900</span>
+                              </div>
+                              <div class="row">
+                                    <div>
+                                          <h3>Pop &amp; Bang e Burble</h3>
+                                          <p>Estouros na desaceleração com controle de intensidade.</p>
+                                    </div><span class="v">R$ 900</span>
+                              </div>
+                              <div class="row">
+                                    <div>
+                                          <h3>Launch control</h3>
+                                          <p>Largada controlada para arrancada e pista.</p>
+                                    </div><span class="v">R$ 700</span>
+                              </div>
+                              <div class="row">
+                                    <div>
+                                          <h3>Troca de turbina</h3>
+                                          <p>Turbinas Garrett, BorgWarner e híbridas.</p>
+                                    </div><span class="v">R$ 6.500</span>
+                              </div>
+                              <div class="row">
+                                    <div>
+                                          <h3>Injetores e bomba</h3>
+                                          <p>Upgrade de combustível para alta potência.</p>
+                                    </div><span class="v">R$ 4.800</span>
+                              </div>
+                              <div class="row">
+                                    <div>
+                                          <h3>Embreagem reforçada</h3>
+                                          <p>Kit performance com volante e instalação.</p>
+                                    </div><span class="v">R$ 4.200</span>
+                              </div>
+                              <div class="row">
+                                    <div>
+                                          <h3>Check-up de performance</h3>
+                                          <p>Diagnóstico completo antes da preparação.</p>
+                                    </div><span class="v">R$ 350</span>
+                              </div>
+                        </div>
+                  </div>
+            </section>
+            <section id="dino">
+                  <div class="wrap dyno">
+                        <figure>
+                           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0UCXALYqSA33loaA-5Bxmlvv9XpjqABueahbNU_V699k7KmxBtDSLXLNE&s=10" alt="">
+
+
+                             
+                        </figure>
+                        <div>
+                              <h2>Dinamômetro de rolos</h2>
+                              <p class="lead" style="margin-bottom:20px">Todo carro passa na bancada antes e depois.
+                                    Você recebe o relatório com a curva de potência e torque, sem estimativa e sem
+                                    promessa vazia.</p>
+                              <ul class="chk">
+                                    <li>Bancada de tração integral e 4x2</li>
+                                    <li>Medição de potência na roda e no motor</li>
+                                    <li>Controle de temperatura, AFR e boost</li>
+                                    <li>Relatório impresso e digital</li>
+                              </ul>
+                        </div>
+                  </div>
+            </section>
+            <section style="background:var(--bg2)">
+                  <div class="wrap">
+                        <h2>Por que a Ançay</h2>
+                        <p class="lead">Preparação feita para durar, andar forte e continuar confiável no dia a dia.</p>
+                        <div class="feat">
+                              <div>
+                                    <h3>Calibração exclusiva</h3>
+                                    <p>Mapas escritos para o seu carro, não um arquivo genérico copiado de outro.</p>
+                              </div>
+                              <div>
+                                    <h3>Segurança do motor</h3>
+                                    <p>Limites de temperatura, pressão e mistura monitorados em cada ajuste.</p>
+                              </div>
+                              <div>
+                                    <h3>Garantia por escrito</h3>
+                                    <p>12 meses na calibração e suporte para ajustes após a entrega.</p>
+                              </div>
+                              <div>
+                                    <h3>Nacionais e importados</h3>
+                                    <p>Atendemos VW, Audi, BMW, Mercedes, Honda, Toyota, Ford, Fiat e mais.</p>
+                              </div>
+                              <div>
+                                    <h3>Hardware de marca</h3>
+                                    <p>Trabalhamos com peças originais e performance de fabricantes reconhecidos.</p>
+                              </div>
+                              <div>
+                                    <h3>Pós-venda dedicado</h3>
+                                    <p>Reajuste de mapa, revisão e acompanhamento no WhatsApp.</p>
+                              </div>
+                        </div>
+                  </div>
+            </section>
+            <section id="processo">
+                  <div class="wrap">
+                        <h2>Como funciona</h2>
+                        <p class="lead">Do primeiro contato à entrega, cada etapa é registrada.</p>
+                        <div class="proc">
+                              <div>
+                                    <h3>Contato</h3>
+                                    <p>Você informa modelo, ano e objetivo.</p>
+                              </div>
+                              <div>
+                                    <h3>Check-up</h3>
+                                    <p>Diagnóstico mecânico e leitura da ECU.</p>
+                              </div>
+                              <div>
+                                    <h3>Dino inicial</h3>
+                                    <p>Medimos a potência original.</p>
+                              </div>
+                              <div>
+                                    <h3>Preparação</h3>
+                                    <p>Instalação das peças e calibração.</p>
+                              </div>
+                              <div>
+                                    <h3>Dino final</h3>
+                                    <p>Comparativo e entrega com relatório.</p>
+                              </div>
+                        </div>
+                  </div>
+            </section>
+            <section style="background:var(--bg2)">
+                  <div class="wrap">
+                        <h2>Quem já passou por aqui</h2>
+                        <p class="lead">Depoimentos de exemplo. Troque pelos de clientes reais.</p>
+                        <div class="rev">
+                              <blockquote>Meu Golf GTI saiu com 100 cv a mais e continua macio no trânsito. O relatório
+                                    do dino mostra tudo.<cite>Rafael M., Golf GTI Stage 2</cite></blockquote>
+                              <blockquote>Fiz a conversão para etanol e o ganho de torque foi gigante. Atendimento sério
+                                    do início ao fim.<cite>Camila T., Civic Si</cite></blockquote>
+                              <blockquote>Levei o carro para a pista e não tive um problema de temperatura. Acerto limpo
+                                    e honesto.<cite>Diego S., BMW M240i Stage 3</cite></blockquote>
+                        </div>
+                  </div>
+            </section>
+            <section>
+                  <div class="wrap">
+                        <h2>Perguntas frequentes</h2>
+                        <p class="lead">O que mais perguntam antes de fechar.</p>
+                        <details>
+                              <summary>Preparar o carro tira a garantia da concessionária?</summary>
+                              <p>Alterações de calibração e hardware podem afetar a garantia de fábrica. Explicamos cada
+                                    caso antes de você decidir.</p>
+                        </details>
+                        <details>
+                              <summary>Dá para voltar o carro ao original?</summary>
+                              <p>Sim. Guardamos o arquivo original da ECU e podemos restaurá-lo quando você quiser.</p>
+                        </details>
+                        <details>
+                              <summary>O consumo piora?</summary>
+                              <p>No uso tranquilo, o consumo fica próximo do original. Ao usar a potência extra,
+                                    naturalmente sobe.</p>
+                              </deta
